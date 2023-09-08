@@ -163,3 +163,21 @@ p {
 .contact-card .card-text a:hover {
     color: #f19c08;
 }
+#social {
+    text-align: center;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icon {
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #ffcc00;
+}
