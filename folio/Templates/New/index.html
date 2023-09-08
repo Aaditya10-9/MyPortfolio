@@ -2,349 +2,239 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aaditya Singh Gurjar - Portfolio</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <style>
-    body {
-      font-family: 'Arial', sans-serif;
-      background-image: linear-gradient(to bottom, #4b2d61, #542d70);
-      color: #f7f7f7;
-    }
-
-    .navbar {
-      background-color: #542d70;
-    }
-
-    .navbar-brand {
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .navbar-nav .nav-link {
-      color: #f7f7f7;
-      font-size: 1.1rem;
-      padding-right: 15px;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #c7c7c7;
-    }
-
-    .jumbotron {
-      position: relative;
-      background-color: #2b1b3d;
-      color: #fff;
-      text-align: center;
-      padding: 100px 0;
-      overflow: hidden;
-    }
-
-    .jumbotron img {
-      position: absolute;
-      top: 50%;
-      left: 5%;
-      transform: translateY(-50%);
-      max-width: 200px;
-      border-radius: 65%;
-      animation: moveAside 1s ease-in-out;
-    }
-
-    .jumbotron h1 {
-      font-family: 'Segoe UI', sans-serif;
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-    }
-
-    .jumbotron p {
-      font-size: 1.5rem;
-    }
-
-    @keyframes moveAside {
-      from {
-        opacity: 0;
-        left: -50%;
-      }
-
-      to {
-        opacity: 1;
-        left: 5%;
-      }
-    }
-
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background-color: rgba(50, 25, 60, 0.8);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
-    }
-
-    h2 {
-      color: #fff;
-      margin-bottom: 20px;
-      border-bottom: 2px solid #fff;
-      padding-bottom: 5px;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    a {
-      color: #aeefb2;
-    }
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .skill-icon {
-      font-size: 4rem;
-      margin-bottom: 10px;
-      color: #f7f7f7;
-      transform: translateX(-50px);
-      opacity: 0;
-      animation: slideIn 1s forwards;
-    }
-
-    .skill-card {
-      border: none;
-      background-color: transparent;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .education-card {
-      background-color: rgba(50, 25, 60, 0.8);
-      border: none;
-      color: #f7f7f7;
-      padding: 20px;
-    }
-
-    .contact-icon {
-      font-size: 2rem;
-      margin-right: 10px;
-      color: #f7f7f7;
-    }
-
-    .contact-link {
-      color: #f7f7f7;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .contact-link:hover {
-      color: #c7c7c7;
-    }
-
-    /* Add CSS animations here */
-    @keyframes slideIn {
-      from {
-        transform: translateX(-50px);
-        opacity: 0;
-      }
-
-      to {
-        transform: translateX(0);
-        opacity: 1;
-      }
-    }
-
-    .animated {
-      animation-fill-mode: both;
-      animation-duration: 1s;
-      animation-name: fadeIn;
-    }
-  
-  </style>
-  <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/bt.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Portfolio</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="#about">About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#skills">Skills</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#education">Education</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#projects">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#personal">Personal Details</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#contact">Contact</a>
-        </li>
-      </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section id="home" class="section">
+            <img src="{% static 'images/p.jpg' %}" alt="Your Image"
+                style="max-width: 30%; border-radius: 50%; float: left; margin-right: 25px;">
+            <h1>
+                <span>Hi, I'm</span><br>
+                <span>Aaditya Singh Gurjar</span>
+            </h1>
+            <p>A Computer Science Enthusiast</p>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </section>
     </div>
-  </nav>
-  <div class="jumbotron jumbotron-fluid text-center bg-primary text-white mb-0">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h1 class="display-4">Aaditya Singh Gurjar</h1>
-          <p class="lead">Computer Science Enthusiast</p>
-        </div>
-        <div class="col-md-6">
-          <img
-            src="https://media.licdn.com/dms/image/D4D03AQGdLwzWoVeirg/profile-displayphoto-shrink_800_800/0/1683975862936?e=2147483647&v=beta&t=jsX1fS8FUvu8-PnwR1O0g4frTc6J115_IN29r-mZl3o"
-            alt="Aaditya Singh Gurjar" class="img-fluid rounded-circle">
-        </div>
-      </div>
+
+    <div class="container mt-5">
+        <!-- About Me Section -->
+        <section id="about" class="section" style="margin-top: 50px;">
+            <div class="row">
+                <div class="col-md-8">
+                    <h2>About Me</h2>
+                    <p>
+                        I am a <b>Computer Science enthusiast</b> with a passion for <b>programming and
+                            problem-solving</b>.
+                        Pursuing a <b>B.Tech in Computer Science (AI)</b> from <b>IIMT College Of Engineering, AKTU</b>.
+                        I believe in
+                        <u>continuous learning</u> and strive to stay updated with the latest advancements in
+                        technology.
+                    </p>
+                </div>
+                <div class="col-md-4">
+                    <img src="https://media.licdn.com/dms/image/D4D03AQGdLwzWoVeirg/profile-displayphoto-shrink_800_800/0/1683975862936?e=2147483647&v=beta&t=jsX1fS8FUvu8-PnwR1O0g4frTc6J115_IN29r-mZl3o"
+                        alt="About Image" style="max-width: 65%; border-radius: 40%;">
+                </div>
+            </div>
+        </section>
     </div>
-  </div>
-  <div class="container mt-4">
-    <section id="about" class="animated">
-      <h2>About Me</h2>
-      <p>
-        Hi, I'm Aaditya Singh Gurjar, a Computer Science enthusiast with a passion for programming and problem-solving.
-        I am
-        pursuing a B.Tech in Computer Science (AI) from IIMT College Of Engineering, AKTU. I believe in continuous
-        learning
-        and strive to stay updated with the latest advancements in technology.
-      </p>
-    </section>
+    <div class="container mt-5">
+        <!-- Education Section -->
+        <section id="education" class="section" style="margin-top: 50px;">
+            <h2>Education</h2>
+            <div class="row no-gutters">
+                <div class="col-md-4">
+                    <!-- Education Card 1 -->
+                    <div class="education-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>AKTU</b></h5>
+                            <p class="card-text">B.Tech in Computer Science with specialization in
+                                Artificial Intelligence</p>
+                            <p class="card-text">Year: 2020 - Present</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- Education Card 2 -->
+                    <div class="education-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>ASPAM Scottish School/CBSE</b></h5>
+                            <p class="card-text">Intermediate</p>
+                            <p class="card-text">Year: 2019 - 2020</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <!-- Education Card 3 -->
+                    <div class="education-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><b>ASPAM Scottish School/CBSE</b></h5>
+                            <p class="card-text">High School</p>
+                            <p class="card-text">Year: 2017 - 2018</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <section id="skills" class="mt-4 animated">
-      <h2>Skills</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card skill-card">
-            <div class="card-body text-center">
-              <i class="fab fa-c skill-icon" aria-hidden="true"></i>
-              <p>C</p>
+    <div class="container mt-5">
+        <!-- Skills Section -->
+        <section id="skills" class="section" style="margin-top: 50px;">
+            <h2>Skills</h2>
+            <div class="row skills-section">
+                <div class="col-md-4">
+                    <div class="skills-card">
+                        <i class="fab fa-html5 skills-icon"></i>
+                        <p>HTML</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skills-card">
+                        <i class="fab fa-java skills-icon"></i>
+                        <p>Java</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skills-card">
+                        <i class="fas fa-code skills-icon"></i>
+                        <p>C</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skills-card">
+                        <i class="fab fa-python skills-icon"></i>
+                        <p>Python</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="skills-card">
+                        <i class="fas fa-database skills-icon"></i>
+                        <p>MySQL</p>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card">
-            <div class="card-body text-center">
-              <i class="fab fa-java skill-icon" aria-hidden="true"></i>
-              <p>Java</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card">
-            <div class="card-body text-center">
-              <i class="fab fa-python skill-icon" aria-hidden="true"></i>
-              <p>Python</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card">
-            <div class="card-body text-center">
-              <i class="fab fa-html skill-icon" aria-hidden="true"></i>
-              <p>HTML</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card skill-card">
-            <div class="card-body text-center">
-              <i class="fab fa-css skill-icon" aria-hidden="true"></i>
-              <p>Tailwind CSS</p>
-            </div>
-          </div>
-        </div>
-        <!-- Add more skills here -->
-      </div>
-    </section>
+        </section>
+    </div>
 
-    <section id="education" class="mt-4 animated">
-      <h2>Education</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card education-card">
-            <div class="card-body">
-              <h5 class="card-title">B.Tech CSE-AI</h5>
-              <p class="card-text">IIMT College Of Engineering/AKTU (2020-24)</p>
-              <p class="card-text">Pursuing</p>
+    <div class="container mt-5">
+        <!-- Projects Section -->
+        <section id="projects" class="section" style="margin-top: 50px;">
+            <h2>Projects</h2>
+            <div class="row">
+                <!-- Project Card 1 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <h5 class="card-title"><b>Billing System</b></h5>
+                        <p class="card-text">
+                            Made a GUI Application in Java to generate a bill of the commodities bought from a firm
+                            and storing the data in Database using MySQL server.
+                        </p>
+                    </div>
+                </div>
+                <!-- Project Card 2 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <h5 class="card-title"><b>Portfolio Website</b></h5>
+                        <p class="card-text">
+                            Made a portfolio website using HTML and Tailwind CSS with Django framework in Python.
+                        </p>
+                    </div>
+                </div>
+                <!-- Project Card 3 -->
+                <div class="col-md-4">
+                    <div class="project-card">
+                        <h5 class="card-title"><b>Blog Website</b></h5>
+                        <p class="card-text">
+                            Made a Blog website using HTML and Tailwind CSS with Django framework in Python.
+                        </p>
+                    </div>
+                </div>
+                <!-- Add more project cards here if needed -->
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card education-card">
-            <div class="card-body">
-              <h5 class="card-title">Intermediate</h5>
-              <p class="card-text">ASPAM Scottish School/CBSE (2019-20)</p>
-              <p class="card-text">69%</p>
+        </section>
+    </div>
+    <div class="container mt-5">
+        <!-- Contact Me Section -->
+        <section id="contact" class="section">
+            <h2>Contact Me</h2>
+            <div class="row">
+                <!-- Contact Card 1: Phone -->
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="card-body">
+                            <h5 class="card-title fas fa-phone"> Phone</h5>
+                            <p class="card-text"><a href="tel:+919540640815">+91-9540640815</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Card 2: LinkedIn -->
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="card-body">
+                            <h5 class="card-title fab fa-linkedin"> LinkedIn</h5>
+                            <p class="card-text"><a href="https://www.linkedin.com/in/aaditya-singh-gurjar-48524b230"
+                                    target="_blank">Aaditya Singh Gurjar</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Contact Card 3: Email -->
+                <div class="col-md-4">
+                    <div class="contact-card">
+                        <div class="card-body">
+                            <h5 class="card-title fas fa-envelope"> Email</h5>
+                            <p class="card-text"><a href="mailto:aadityagujjar3@gmail.com">aadityagujjar3@gmail.com</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card education-card">
-            <div class="card-body">
-              <h5 class="card-title">High School</h5>
-              <p class="card-text">ASPAM Scottish School/CBSE (2017-18)</p>
-              <p class="card-text">65%</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="mt-4 animated">
-      <h2>Projects</h2>
-      <ul>
-        <li>Billing System - Made a GUI Application in Java to generate a bill of the commodities bought from a firm and
-          storing the data in Database using MySQL server.</li>
-        <li>Portfolio Website - Made a portfolio website using HTML and Tailwing CSS with Django framework in python.</li>
-        <li>Billing System - Made a Blog website using HTML and Tailwing CSS with Django framework in python.</li>
-        <!-- Add more projects here -->
-      </ul>
-    </section>
-
-    <section id="personal" class="mt-4 animated">
-      <h2>Personal Details</h2>
-      <ul>
-        <li>Date of Birth - 19th October, 2005</li>
-        <li>Marital Status - Single</li>
-        <li>Nationality - Indian</li>
-        <li>Known Languages - English, Hindi</li>
-      </ul>
-    </section>
-
-    <section id="contact" class="mt-4 animated">
-      <h2>Contact</h2>
-      <p>
-        <a href="tel:+919540640815" class="contact-link"><i class="fas fa-phone-alt contact-icon"></i>
-          +91-9540640815</a>
-        <br>
-        <a href="mailto:aadityagujjar3@gmail.com" class="contact-link"><i class="far fa-envelope contact-icon"></i>
-          aadityagujjar3@gmail.com</a>
-        <br>
-        <a href="https://www.linkedin.com/in/aaditya-singh-gurjar-48524b230" class="contact-link" target="_blank"><i
-            class="fab fa-linkedin-in contact-icon"></i> LinkedIn Profile</a>
-      </p>
-    </section>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        </section>
+    </div>
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+    <script src="{% static 'js/bt.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
